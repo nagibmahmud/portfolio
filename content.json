@@ -90,12 +90,110 @@
       "github": "https://github.com/nagibmahmud/node",
       "liveUrl": "https://nagibmahmud.github.io/node",
       "image": "https://via.placeholder.com/400x300/4facfe/ffffff?text=Node+Projects"
+    },
+    {
+      "id": "10",
+      "title": "Automatic Face Detection",
+      "description": "Image processing project for detecting human faces from images or live video. Usable in robotics and AI applications.",
+      "tech": ["Python", "OpenCV"],
+      "github": "https://github.com/nagibmahmud/Automatic-face-detection",
+      "liveUrl": "https://github.com/nagibmahmud/Automatic-face-detection",
+      "image": "https://via.placeholder.com/400x300/ec4899/ffffff?text=Face+Detection"
+    },
+    {
+      "id": "11",
+      "title": "Flood Prediction System",
+      "description": "Flood Prediction System for Surma & Kushiyara River Basin. Predicts flood risks using data analysis.",
+      "tech": ["HTML", "Python", "Data Analysis"],
+      "github": "https://github.com/nagibmahmud/flood-prediction",
+      "liveUrl": "https://nagibmahmud.github.io/flood-prediction",
+      "image": "https://via.placeholder.com/400x300/0ea5e9/ffffff?text=Flood+Prediction"
+    },
+    {
+      "id": "12",
+      "title": "Perfect Wood",
+      "description": "Premium wood showcase and e-commerce project with beautiful UI and product gallery.",
+      "tech": ["HTML", "CSS", "JavaScript"],
+      "github": "https://github.com/nagibmahmud/Perfect-wood",
+      "liveUrl": "https://nagibmahmud.github.io/Perfect-wood",
+      "image": "https://via.placeholder.com/400x300/b45309/ffffff?text=Perfect+Wood"
     }
   ],
-  "websites": [],
+  "websites": [
+    {
+      "id": "1",
+      "title": "Agency",
+      "url": "https://github.com/nagibmahmud/Agency"
+    },
+    {
+      "id": "2",
+      "title": "AI Assistant",
+      "url": "https://github.com/nagibmahmud/ai"
+    },
+    {
+      "id": "3",
+      "title": "Automatic Face Detection",
+      "url": "https://github.com/nagibmahmud/Automatic-face-detection"
+    },
+    {
+      "id": "4",
+      "title": "Crypto Exchange",
+      "url": "https://github.com/nagibmahmud/crypto-exchange"
+    },
+    {
+      "id": "5",
+      "title": "Flood Prediction",
+      "url": "https://github.com/nagibmahmud/flood-prediction"
+    },
+    {
+      "id": "6",
+      "title": "Keyboard",
+      "url": "https://github.com/nagibmahmud/keyboard"
+    },
+    {
+      "id": "7",
+      "title": "Lead Management",
+      "url": "https://github.com/nagibmahmud/lead"
+    },
+    {
+      "id": "8",
+      "title": "Mars Rover",
+      "url": "https://github.com/nagibmahmud/Mars-rover"
+    },
+    {
+      "id": "9",
+      "title": "Node.js",
+      "url": "https://github.com/nagibmahmud/node"
+    },
+    {
+      "id": "10",
+      "title": "Perfect Wood",
+      "url": "https://github.com/nagibmahmud/Perfect-wood"
+    },
+    {
+      "id": "11",
+      "title": "Portfolio",
+      "url": "https://github.com/nagibmahmud/portfolio"
+    },
+    {
+      "id": "12",
+      "title": "PW Test",
+      "url": "https://github.com/nagibmahmud/pw-test"
+    },
+    {
+      "id": "13",
+      "title": "Shop",
+      "url": "https://github.com/nagibmahmud/Shop"
+    },
+    {
+      "id": "14",
+      "title": "Weather",
+      "url": "https://github.com/nagibmahmud/weather"
+    }
+  ],
   "about": {
-    "text1": "I'm a passionate digital creator and innovator with a deep love for crafting beautiful, functional, and user-centric web experiences. My journey in the world of technology has been driven by curiosity and a relentless pursuit of excellence.",
-    "text2": "With expertise spanning from front-end development to system architecture, I thrive on transforming complex ideas into elegant solutions that make a real impact. Every project I undertake is a new challenge and an opportunity to learn, grow, and push the boundaries of what's possible.",
+    "text1": "I'm a passionate digital creator and innovator with a deep love for crafting beautiful, functional, and user-centric web experiences. My journey in the world of technology has been defined by a commitment to excellence and a drive to solve real-world problems through code and design.",
+    "text2": "With expertise spanning from front-end development to system architecture, I thrive on transforming complex ideas into elegant solutions that make a real impact. Every project I undertake is an opportunity to push boundaries and create something meaningful.",
     "text3": "When I'm not coding, you can find me exploring the latest tech trends, contributing to open-source projects, or sharing knowledge with the developer community.",
     "image": "",
     "stats": {
