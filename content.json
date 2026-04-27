@@ -1,0 +1,136 @@
+{
+  "hero": {
+    "avatar": "",
+    "title1": "Creator",
+    "title2": "Innovator",
+    "subtitle": "Building the future with code, design, and innovation. Welcome to my digital playground.",
+    "btn1Text": "Explore My Work",
+    "btn1Link": "projects.html",
+    "btn2Text": "Let's Connect",
+    "btn2Link": "contact.html"
+  },
+  "projects": [
+    {
+      "id": "1",
+      "title": "nStore (Tech E-Commerce)",
+      "description": "Cinematic premium tech e-commerce SPA with glassmorphism design, product catalog, features page, contact form, and hidden admin panel.",
+      "tech": ["HTML", "CSS", "JavaScript", "GSAP"],
+      "github": "https://github.com/nagibmahmud/Shop",
+      "liveUrl": "https://nagibmahmud.github.io/Shop",
+      "image": "https://via.placeholder.com/400x300/00f2fe/000000?text=nStore"
+    },
+    {
+      "id": "2",
+      "title": "Crypto Exchange",
+      "description": "High-performance cryptocurrency trading platform with live charts, market data, and mock-wallet system.",
+      "tech": ["HTML", "CSS", "JavaScript", "WebSockets"],
+      "github": "https://github.com/nagibmahmud/crypto-exchange",
+      "liveUrl": "https://nagibmahmud.github.io/crypto-exchange",
+      "image": "https://via.placeholder.com/400x300/4facfe/000000?text=Crypto+Exchange"
+    },
+    {
+      "id": "3",
+      "title": "AI Assistant",
+      "description": "Intelligent AI-powered assistant with chat interface, smart responses, and context awareness.",
+      "tech": ["HTML", "CSS", "JavaScript", "AI"],
+      "github": "https://github.com/nagibmahmud/ai",
+      "liveUrl": "https://nagibmahmud.github.io/ai",
+      "image": "https://via.placeholder.com/400x300/8b5cf6/ffffff?text=AI+Assistant"
+    },
+    {
+      "id": "4",
+      "title": "Agency Website",
+      "description": "Professional agency website featuring a modern admin dashboard, service listings, and contact management.",
+      "tech": ["HTML", "CSS", "JavaScript"],
+      "github": "https://github.com/nagibmahmud/Agency",
+      "liveUrl": "https://nagibmahmud.github.io/Agency",
+      "image": "https://via.placeholder.com/400x300/6366f1/ffffff?text=Agency"
+    },
+    {
+      "id": "5",
+      "title": "Weather App",
+      "description": "Cinematic weather application with real-time forecasts, dynamic backgrounds, and beautiful UI templates.",
+      "tech": ["Python", "HTML", "CSS"],
+      "github": "https://github.com/nagibmahmud/weather",
+      "liveUrl": "https://nagibmahmud.github.io/weather",
+      "image": "https://via.placeholder.com/400x300/3b82f6/ffffff?text=Weather+App"
+    },
+    {
+      "id": "6",
+      "title": "Mars Rover Dashboard",
+      "description": "Competition-ready dashboard for Mars rover challenges with telemetry data and team galleries.",
+      "tech": ["HTML", "CSS", "JavaScript"],
+      "github": "https://github.com/nagibmahmud/Mars-rover",
+      "liveUrl": "https://nagibmahmud.github.io/Mars-rover",
+      "image": "https://via.placeholder.com/400x300/f59e0b/ffffff?text=Mars+Rover"
+    },
+    {
+      "id": "7",
+      "title": "Lead Management System",
+      "description": "Robust lead tracking and customer management system for businesses.",
+      "tech": ["Node.js", "Express", "MongoDB"],
+      "github": "https://github.com/nagibmahmud/lead",
+      "liveUrl": "https://nagibmahmud.github.io/lead",
+      "image": "https://via.placeholder.com/400x300/10b981/ffffff?text=Lead+Management"
+    },
+    {
+      "id": "8",
+      "title": "Smart Keyboard App",
+      "description": "Custom Android keyboard with AI-driven smart suggestions and multi-language support.",
+      "tech": ["Kotlin", "Android SDK"],
+      "github": "https://github.com/nagibmahmud/keyboard",
+      "liveUrl": "https://github.com/nagibmahmud/keyboard",
+      "image": "https://via.placeholder.com/400x300/06b6d4/ffffff?text=Keyboard+App"
+    },
+    {
+      "id": "9",
+      "title": "Node.js Microservices",
+      "description": "Collection of backend microservices and API architectures.",
+      "tech": ["Node.js", "Docker", "REST"],
+      "github": "https://github.com/nagibmahmud/node",
+      "liveUrl": "https://nagibmahmud.github.io/node",
+      "image": "https://via.placeholder.com/400x300/4facfe/ffffff?text=Node+Projects"
+    }
+  ],
+  "websites": [],
+  "about": {
+    "text1": "I'm a passionate digital creator and innovator with a deep love for crafting beautiful, functional, and user-centric web experiences. My journey in the world of technology has been driven by curiosity and a relentless pursuit of excellence.",
+    "text2": "With expertise spanning from front-end development to system architecture, I thrive on transforming complex ideas into elegant solutions that make a real impact. Every project I undertake is a new challenge and an opportunity to learn, grow, and push the boundaries of what's possible.",
+    "text3": "When I'm not coding, you can find me exploring the latest tech trends, contributing to open-source projects, or sharing knowledge with the developer community.",
+    "image": "",
+    "stats": {
+      "projects": 50,
+      "experience": 5,
+      "clients": 30,
+      "technologies": 10
+    }
+  },
+  "skills": [
+    {
+      "id": "1",
+      "name": "Frontend Development",
+      "skills": ["React", "Vue.js", "TypeScript", "JavaScript", "HTML5", "CSS3", "Tailwind CSS", "Sass"]
+    },
+    {
+      "id": "2",
+      "name": "Backend Development",
+      "skills": ["Node.js", "Python", "Express", "Django", "REST APIs", "GraphQL", "MongoDB", "PostgreSQL"]
+    },
+    {
+      "id": "3",
+      "name": "DevOps & Tools",
+      "skills": ["Docker", "AWS", "Git", "CI/CD", "Jenkins", "Nginx", "Linux", "Bash"]
+    },
+    {
+      "id": "4",
+      "name": "Design & UX",
+      "skills": ["UI/UX Design", "Figma", "Adobe XD", "Responsive Design", "Accessibility", "Performance", "Animation", "Prototyping"]
+    }
+  ],
+  "contact": {
+    "email": "nagibmahmud@gmail.com",
+    "github": "https://github.com/nagibmahmud",
+    "linkedin": "https://linkedin.com/in/nagibmahmud",
+    "twitter": "https://twitter.com/nagibmahmud"
+  }
+}

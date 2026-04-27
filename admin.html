@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="admin-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Login Overlay */
+        #loginOverlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .login-box {
+            background: linear-gradient(145deg, var(--card-color), #111827);
+            padding: 50px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            text-align: center;
+            max-width: 400px;
+        }
+        .login-box h2 {
+            color: var(--text-primary);
+            margin-bottom: 30px;
+        }
+        .login-box input {
+            width: 100%;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            color: var(--text-primary);
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+        .login-box input:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+        .login-box .error {
+            color: #ff6b6b;
+            margin-bottom: 15px;
+            display: none;
+        }
+        .login-hint {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Login Overlay -->
+    <div id="loginOverlay">
+        <div class="login-box">
+            <h2><i class="fas fa-lock"></i> Admin Access</h2>
+            <p class="error" id="loginError">Incorrect password!</p>
+            <input type="password" id="adminPassword" placeholder="Enter password" onkeypress="if(event.key==='Enter') checkPassword()">
+            <button class="btn-primary" onclick="checkPassword()">
+                <i class="fas fa-sign-in-alt"></i> Login
+            </button>
+            <p class="login-hint">Hint: Press <strong>Ctrl+Shift+A</strong> on any page</p>
+        </div>
+    </div>
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">Admin Panel</div>
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fas fa-home"></i> View Site</a></li>
+                <li><a href="#hero" class="active">Hero</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#websites">Websites</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#settings">Settings</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Admin Dashboard Section -->
+    <section class="admin-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Admin <span class="text-gradient-primary">Dashboard</span></h2>
+                <p>Manage all aspects of your portfolio from one place</p>
+            </div>
+
+            <!-- Projects Tab -->
+            <div class="admin-tab active" id="hero">
+                <div class="admin-card">
+                    <div class="admin-header">
+                        <h3><i class="fas fa-rocket"></i> Hero Section</h3>
+                        <button class="btn-primary" id="editHeroBtn">
+                            <i class="fas fa-edit"></i> Edit Hero
+                        </button>
+                    </div>
+                    <div class="hero-preview" id="heroPreview">
+                        <!-- Hero preview loaded here -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="admin-tab" id="projects">
+                <div class="admin-card">
+                    <div class="admin-header">
+                        <h3><i class="fas fa-box"></i> Projects Management</h3>
+                        <button class="btn-primary" id="addProjectBtn">
+                            <i class="fas fa-plus"></i> Add Project
+                        </button>
+                    </div>
+                    <div class="admin-grid" id="projectsGrid">
+                        <!-- Projects loaded here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Websites Tab -->
+            <div class="admin-tab" id="websites">
+                <div class="admin-card">
+                    <div class="admin-header">
+                        <h3><i class="fas fa-globe"></i> Websites Management</h3>
+                        <button class="btn-primary" id="addWebsiteBtn">
+                            <i class="fas fa-plus"></i> Add Website
+                        </button>
+                    </div>
+                    <div class="admin-grid" id="websitesGrid">
+                        <!-- Websites loaded here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- About Tab -->
+            <div class="admin-tab" id="about">
+                <div class="admin-card">
+                    <div class="admin-header">
+                        <h3><i class="fas fa-user"></i> About Section</h3>
+                        <button class="btn-primary" id="editAboutBtn">
+                            <i class="fas fa-edit"></i> Edit About
+                        </button>
+                    </div>
+                    <div class="about-preview" id="aboutPreview">
+                        <!-- About content loaded here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills Tab -->
+            <div class="admin-tab" id="skills">
+                <div class="admin-card">
+                    <div class="admin-header">
+                        <h3><i class="fas fa-tools"></i> Skills Management</h3>
+                        <button class="btn-primary" id="addSkillBtn">
+                            <i class="fas fa-plus"></i> Add Skill
+                        </button>
+                    </div>
+                    <div class="skills-admin-grid" id="skillsGrid">
+                        <!-- Skills loaded here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Tab -->
+            <div class="admin-tab" id="contact">
+                <div class="admin-card">
+                    <div class="admin-header">
+                        <h3><i class="fas fa-envelope"></i> Contact Settings</h3>
+                        <button class="btn-primary" id="editContactBtn">
+                            <i class="fas fa-edit"></i> Edit Contact Info
+                        </button>
+                    </div>
+                    <div class="contact-preview" id="contactPreview">
+                        <!-- Contact info loaded here -->
+                    </div>
+                    <div class="messages-section">
+                        <h4><i class="fas fa-inbox"></i> Messages Received</h4>
+                        <div class="messages-list" id="messagesList">
+                            <!-- Messages loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings Tab -->
+            <div class="admin-tab" id="settings">
+                <div class="admin-card">
+                    <div class="admin-header">
+                        <h3><i class="fas fa-cog"></i> Export/Import Content</h3>
+                    </div>
+                    <div class="settings-content">
+                        <div class="export-section">
+                            <h4><i class="fas fa-download"></i> Export Content</h4>
+                            <p>Download all your content as a JSON file to backup or commit to GitHub</p>
+                            <button class="btn-primary" id="exportContentBtn">
+                                <i class="fas fa-download"></i> Download Content JSON
+                            </button>
+                        </div>
+                        <div class="import-section">
+                            <h4><i class="fas fa-upload"></i> Import Content</h4>
+                            <p>Upload a content JSON file to update your portfolio</p>
+                            <input type="file" id="importFile" accept=".json" style="display: none;">
+                            <button class="btn-secondary" id="importContentBtn">
+                                <i class="fas fa-upload"></i> Upload Content JSON
+                            </button>
+                        </div>
+                        <div class="security-section">
+                            <h4><i class="fas fa-shield-alt"></i> Security Settings</h4>
+                            <div class="form-group">
+                                <label>Admin Password</label>
+                                <input type="text" id="adminPasswordSetting" placeholder="Enter new password" style="max-width: 300px; margin-bottom: 10px;">
+                                <button class="btn-primary" id="changePasswordBtn" style="padding: 10px 20px;">
+                                    <i class="fas fa-key"></i> Change Password
+                                </button>
+                            </div>
+                            <div class="form-group" style="margin-top: 20px;">
+                                <label>Keyboard Shortcut</label>
+                                <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+                                    <label style="display: flex; align-items: center; gap: 8px;">
+                                        <input type="checkbox" id="ctrlKey" checked> Ctrl
+                                    </label>
+                                    <label style="display: flex; align-items: center; gap: 8px;">
+                                        <input type="checkbox" id="shiftKey" checked> Shift
+                                    </label>
+                                    <label style="display: flex; align-items: center; gap: 8px;">
+                                        <input type="checkbox" id="altKey"> Alt
+                                    </label>
+                                    <span>+</span>
+                                    <input type="text" id="shortcutKey" value="A" placeholder="Key" style="width: 60px; text-transform: uppercase;">
+                                    <button class="btn-primary" id="saveShortcutBtn" style="padding: 10px 20px;">
+                                        <i class="fas fa-save"></i> Save Shortcut
+                                    </button>
+                                </div>
+                                <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 10px;">
+                                    Current shortcut: <strong id="currentShortcut">Ctrl + Shift + A</strong>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="github-section">
+                            <h4><i class="fab fa-github"></i> GitHub Instructions</h4>
+                            <ol>
+                                <li>Edit content in admin panel</li>
+                                <li>Click "Download Content JSON"</li>
+                                <li>Save as <code>content.json</code></li>
+                                <li>Commit <code>content.json</code> to your GitHub repository</li>
+                                <li>Website will load content from the file</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Modal -->
+    <div class="modal" id="heroModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-edit"></i> Edit Hero Section</h3>
+                <button class="modal-close" id="heroModalClose">&times;</button>
+            </div>
+            <form id="heroForm" class="modal-form">
+                <div class="form-group">
+                    <label>Avatar/Photo URL</label>
+                    <input type="url" id="heroAvatar" placeholder="https://example.com/your-photo.jpg">
+                    <small>Leave empty to use emoji (🚀)</small>
+                </div>
+                <div class="form-group">
+                    <label>Title Word 1 *</label>
+                    <input type="text" id="heroTitle1" placeholder="e.g., Creator" required>
+                </div>
+                <div class="form-group">
+                    <label>Title Word 2 *</label>
+                    <input type="text" id="heroTitle2" placeholder="e.g., Innovator" required>
+                </div>
+                <div class="form-group">
+                    <label>Subtitle *</label>
+                    <textarea id="heroSubtitle" rows="3" required></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Button 1 Text</label>
+                        <input type="text" id="heroBtn1Text" placeholder="Explore My Work">
+                    </div>
+                    <div class="form-group">
+                        <label>Button 1 Link</label>
+                        <input type="text" id="heroBtn1Link" placeholder="projects.html">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Button 2 Text</label>
+                        <input type="text" id="heroBtn2Text" placeholder="Let's Connect">
+                    </div>
+                    <div class="form-group">
+                        <label>Button 2 Link</label>
+                        <input type="text" id="heroBtn2Link" placeholder="contact.html">
+                    </div>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-secondary" id="heroCancelBtn">Cancel</button>
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-save"></i> Save Changes
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Project Modal -->
+    <div class="modal" id="projectModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="projectModalTitle"><i class="fas fa-plus-circle"></i> Add New Project</h3>
+                <button class="modal-close" id="projectModalClose">&times;</button>
+            </div>
+            <form id="projectForm" class="modal-form">
+                <input type="hidden" id="projectId">
+                <div class="form-group">
+                    <label>Title *</label>
+                    <input type="text" id="projectTitle" placeholder="Project Title" required>
+                </div>
+                <div class="form-group">
+                    <label>Description *</label>
+                    <textarea id="projectDescription" rows="3" placeholder="Brief description" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Image URL</label>
+                    <input type="url" id="projectImage" placeholder="https://example.com/image.jpg">
+                </div>
+                    <div class="form-group">
+                        <label>Live URL</label>
+                        <input type="url" id="projectLiveUrl" placeholder="https://...">
+                    </div>
+                <div class="form-group">
+                    <label>Tags (comma-separated)</label>
+                    <input type="text" id="projectTags" placeholder="React, Next.js, TypeScript">
+                </div>
+                <div class="form-group checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="projectFeatured">
+                        <span class="checkmark"></span>
+                        Featured Project (show on homepage)
+                    </label>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-secondary" id="projectCancelBtn">Cancel</button>
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-save"></i> <span id="projectSubmitBtnText">Create Project</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Website Modal -->
+    <div class="modal" id="websiteModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="websiteModalTitle"><i class="fas fa-plus-circle"></i> Add New Website</h3>
+                <button class="modal-close" id="websiteModalClose">&times;</button>
+            </div>
+            <form id="websiteForm" class="modal-form">
+                <input type="hidden" id="websiteId">
+                <div class="form-group">
+                    <label>Name *</label>
+                    <input type="text" id="websiteName" placeholder="Website Name" required>
+                </div>
+                <div class="form-group">
+                    <label>Description *</label>
+                    <textarea id="websiteDescription" rows="3" placeholder="Brief description" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Image URL</label>
+                    <input type="url" id="websiteImage" placeholder="https://example.com/image.jpg">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Website URL</label>
+                        <input type="url" id="websiteUrl" placeholder="https://..." required>
+                    </div>
+                    <div class="form-group">
+                        <label>Details URL</label>
+                        <input type="url" id="websiteDetailsUrl" placeholder="https://...">
+                    </div>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-secondary" id="websiteCancelBtn">Cancel</button>
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-save"></i> <span id="websiteSubmitBtnText">Create Website</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- About Modal -->
+    <div class="modal" id="aboutModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-edit"></i> Edit About Section</h3>
+                <button class="modal-close" id="aboutModalClose">&times;</button>
+            </div>
+            <form id="aboutForm" class="modal-form">
+                <div class="form-group">
+                    <label>About Text (Paragraph 1) *</label>
+                    <textarea id="aboutText1" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>About Text (Paragraph 2) *</label>
+                    <textarea id="aboutText2" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>About Text (Paragraph 3) *</label>
+                    <textarea id="aboutText3" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Image URL</label>
+                    <input type="url" id="aboutImage" placeholder="https://example.com/image.jpg">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Projects Count</label>
+                        <input type="number" id="statProjects" value="50">
+                    </div>
+                    <div class="form-group">
+                        <label>Years Experience</label>
+                        <input type="number" id="statExperience" value="5">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Happy Clients</label>
+                        <input type="number" id="statClients" value="30">
+                    </div>
+                    <div class="form-group">
+                        <label>Technologies</label>
+                        <input type="number" id="statTechnologies" value="10">
+                    </div>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-secondary" id="aboutCancelBtn">Cancel</button>
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-save"></i> Save Changes
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Skill Modal -->
+    <div class="modal" id="skillModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="skillModalTitle"><i class="fas fa-plus-circle"></i> Add Skill Category</h3>
+                <button class="modal-close" id="skillModalClose">&times;</button>
+            </div>
+            <form id="skillForm" class="modal-form">
+                <input type="hidden" id="skillCategoryId">
+                <div class="form-group">
+                    <label>Category Name *</label>
+                    <input type="text" id="skillCategoryName" placeholder="e.g., Frontend Development" required>
+                </div>
+                <div class="form-group">
+                    <label>Skills (comma-separated) *</label>
+                    <textarea id="skillList" rows="4" placeholder="React, Vue.js, TypeScript, JavaScript..." required></textarea>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-secondary" id="skillCancelBtn">Cancel</button>
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-save"></i> <span id="skillSubmitBtnText">Save Category</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="modal" id="contactModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-edit"></i> Edit Contact Information</h3>
+                <button class="modal-close" id="contactModalClose">&times;</button>
+            </div>
+            <form id="contactFormAdmin" class="modal-form">
+                <div class="form-group">
+                    <label>Email Address *</label>
+                    <input type="email" id="contactEmail" required>
+                </div>
+                <div class="form-group">
+                    <label>GitHub URL</label>
+                    <input type="url" id="contactGithub" placeholder="https://github.com/yourusername">
+                </div>
+                <div class="form-group">
+                    <label>LinkedIn URL</label>
+                    <input type="url" id="contactLinkedin" placeholder="https://linkedin.com/in/yourusername">
+                </div>
+                <div class="form-group">
+                    <label>Twitter URL</label>
+                    <input type="url" id="contactTwitter" placeholder="https://twitter.com/yourusername">
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-secondary" id="contactCancelBtn">Cancel</button>
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-save"></i> Save Changes
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://twitter.com/yourusername" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="mailto:your@email.com"><i class="fas fa-envelope"></i></a>
+            </div>
+            <div class="footer-divider"></div>
+            <p class="footer-text">© <span id="currentYear"></span> Digital Creator & Innovator. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="admin.js"></script>
+</body>
+</html>
