@@ -55,8 +55,8 @@ const defaultContact = {
 };
 
 const defaultAbout = {
-    text1: "I'm a passionate digital creator and innovator with a deep love for crafting beautiful, functional, and user-centric web experiences. My journey in the world of technology has been driven by curiosity and a relentless pursuit of excellence.",
-    text2: "With expertise spanning from front-end development to system architecture, I thrive on transforming complex ideas into elegant solutions that make a real impact. Every project I undertake is a new challenge and an opportunity to learn, grow, and push the boundaries of what's possible.",
+    text1: "I'm a passionate digital creator and innovator with a deep love for crafting beautiful, functional, and user-centric web experiences. My journey in the world of technology has been driven by a relentless curiosity and a desire to push the boundaries of what's possible in the digital realm.",
+    text2: "With expertise spanning from front-end development to system architecture, I thrive on transforming complex ideas into elegant solutions that make a real impact. Every project I undertake is an opportunity to blend creativity with technical excellence.",
     text3: "When I'm not coding, you can find me exploring the latest tech trends, contributing to open-source projects, or sharing knowledge with the developer community.",
     image: "",
     stats: {
@@ -104,8 +104,8 @@ function loadProjects() {
     }
 
     projectsGrid.innerHTML = projects.map(project => `
-        <div class="project-card" onclick="${project.liveUrl ? `window.open('${project.liveUrl}', '_blank')` : ''}" style="${project.liveUrl ? 'cursor: pointer;' : ''}">
-            <div class="project-image-wrapper">
+        <div class="project-card" style="${project.liveUrl ? 'cursor: pointer;' : ''}">
+            <div class="project-image-wrapper" onclick="${project.liveUrl ? `window.open('${project.liveUrl}', '_blank')` : ''}" style="${project.liveUrl ? 'cursor: pointer;' : ''}">
                 <img src="${project.image || 'https://via.placeholder.com/400x300/667eea/ffffff?text=Project+Image'}"
                      alt="${project.title}" class="project-image"
                      onerror="this.src='https://via.placeholder.com/400x300/667eea/ffffff?text=Project+Image'">
@@ -114,7 +114,9 @@ function loadProjects() {
                 </div>
             </div>
             <div class="project-content">
-                <h3>${project.title}</h3>
+                <h3 onclick="${project.liveUrl ? `window.open('${project.liveUrl}', '_blank')` : ''}" style="${project.liveUrl ? 'cursor: pointer; transition: color 0.3s ease;' : ''}" class="project-title">
+                    ${project.title}
+                </h3>
                 <p>${project.description}</p>
                 ${project.tags ? `
                     <div class="project-tags">
@@ -124,6 +126,16 @@ function loadProjects() {
             </div>
         </div>
     `).join('');
+
+    // Add hover effect to project titles
+    document.querySelectorAll('.project-title').forEach(title => {
+        title.addEventListener('mouseover', function() {
+            if (this.onclick) this.style.color = 'var(--accent-color)';
+        });
+        title.addEventListener('mouseout', function() {
+            if (this.onclick) this.style.color = '';
+        });
+    });
 }
 
 // ==================== LOAD WEBSITES ====================
