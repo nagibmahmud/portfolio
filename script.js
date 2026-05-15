@@ -39,7 +39,9 @@ const defaultContact = {
     email: 'your@email.com',
     github: 'https://github.com/yourusername',
     linkedin: 'https://linkedin.com/in/yourusername',
-    twitter: 'https://twitter.com/yourusername'
+    twitter: 'https://twitter.com/yourusername',
+    whatsapp: 'https://wa.me/8801234567890',
+    telegram: 'https://t.me/yourusername'
 };
 
 const defaultAbout = {
@@ -222,7 +224,8 @@ function loadContact() {
         socialContainer.innerHTML = `
             ${contact.github ? `<a href="${contact.github}" target="_blank"><i class="fab fa-github"></i></a>` : ''}
             ${contact.linkedin ? `<a href="${contact.linkedin}" target="_blank"><i class="fab fa-linkedin"></i></a>` : ''}
-            ${contact.twitter ? `<a href="${contact.twitter}" target="_blank"><i class="fab fa-twitter"></i></a>` : ''}
+            ${contact.whatsapp ? `<a href="${contact.whatsapp}" target="_blank"><i class="fab fa-whatsapp"></i></a>` : ''}
+            ${contact.telegram ? `<a href="${contact.telegram}" target="_blank"><i class="fab fa-telegram"></i></a>` : ''}
             ${contact.email ? `<a href="mailto:${contact.email}"><i class="fas fa-envelope"></i></a>` : ''}
         `;
     });
