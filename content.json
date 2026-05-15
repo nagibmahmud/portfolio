@@ -17,7 +17,7 @@
       "tech": ["HTML", "CSS", "JavaScript", "GSAP"],
       "github": "https://github.com/nagibmahmud/Shop",
       "liveUrl": "https://nagibmahmud.github.io/Shop",
-      "image": "https://via.placeholder.com/400x300/00f2fe/000000?text=nStore"
+      "image": "../Shop/screenshots/hero.png"
     },
     {
       "id": "2",
@@ -26,7 +26,7 @@
       "tech": ["HTML", "CSS", "JavaScript", "WebSockets"],
       "github": "https://github.com/nagibmahmud/crypto-exchange",
       "liveUrl": "https://nagibmahmud.github.io/crypto-exchange",
-      "image": "https://via.placeholder.com/400x300/4facfe/000000?text=Crypto+Exchange"
+      "image": "../crypto-exchange/screenshots/hero.png"
     },
     {
       "id": "3",
@@ -35,7 +35,7 @@
       "tech": ["HTML", "CSS", "JavaScript", "AI"],
       "github": "https://github.com/nagibmahmud/ai",
       "liveUrl": "https://nagibmahmud.github.io/ai",
-      "image": "https://via.placeholder.com/400x300/8b5cf6/ffffff?text=AI+Assistant"
+      "image": "../ai/screenshots/hero.png"
     },
     {
       "id": "4",
@@ -44,7 +44,7 @@
       "tech": ["HTML", "CSS", "JavaScript"],
       "github": "https://github.com/nagibmahmud/Agency",
       "liveUrl": "https://nagibmahmud.github.io/Agency",
-      "image": "https://via.placeholder.com/400x300/6366f1/ffffff?text=Agency"
+      "image": "../Agency/screenshots/hero.png"
     },
     {
       "id": "5",
@@ -53,7 +53,7 @@
       "tech": ["Python", "HTML", "CSS"],
       "github": "https://github.com/nagibmahmud/weather",
       "liveUrl": "https://nagibmahmud.github.io/weather",
-      "image": "https://via.placeholder.com/400x300/3b82f6/ffffff?text=Weather+App"
+      "image": "../weather/screenshots/hero.png"
     },
     {
       "id": "6",
@@ -62,7 +62,7 @@
       "tech": ["HTML", "CSS", "JavaScript"],
       "github": "https://github.com/nagibmahmud/Mars-rover",
       "liveUrl": "https://nagibmahmud.github.io/Mars-rover",
-      "image": "https://via.placeholder.com/400x300/f59e0b/ffffff?text=Mars+Rover"
+      "image": "../Mars rover/screenshots/hero.png"
     },
     {
       "id": "7",
@@ -71,7 +71,7 @@
       "tech": ["Node.js", "Express", "MongoDB"],
       "github": "https://github.com/nagibmahmud/lead",
       "liveUrl": "https://nagibmahmud.github.io/lead",
-      "image": "https://via.placeholder.com/400x300/10b981/ffffff?text=Lead+Management"
+      "image": "../lead/screenshots/hero.png"
     },
     {
       "id": "8",
@@ -80,7 +80,7 @@
       "tech": ["Kotlin", "Android SDK"],
       "github": "https://github.com/nagibmahmud/keyboard",
       "liveUrl": "https://github.com/nagibmahmud/keyboard",
-      "image": "https://via.placeholder.com/400x300/06b6d4/ffffff?text=Keyboard+App"
+      "image": "../keyboard/screenshots/hero.png"
     },
     {
       "id": "9",
@@ -89,7 +89,7 @@
       "tech": ["Node.js", "Docker", "REST"],
       "github": "https://github.com/nagibmahmud/node",
       "liveUrl": "https://nagibmahmud.github.io/node",
-      "image": "https://via.placeholder.com/400x300/4facfe/ffffff?text=Node+Projects"
+      "image": "../node/screenshots/hero.png"
     }
   ],
   "websites": [],
@@ -146,6 +146,8 @@
     "email": "nagibmahmud@gmail.com",
     "github": "https://github.com/nagibmahmud",
     "linkedin": "https://linkedin.com/in/nagibmahmud",
-    "twitter": "https://twitter.com/nagibmahmud"
+    "twitter": "https://twitter.com/nagibmahmud",
+    "whatsapp": "",
+    "telegram": ""
   }
 }

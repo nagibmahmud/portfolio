@@ -905,13 +905,17 @@ const contactEmail = document.getElementById('contactEmail');
 const contactGithub = document.getElementById('contactGithub');
 const contactLinkedin = document.getElementById('contactLinkedin');
 const contactTwitter = document.getElementById('contactTwitter');
+const contactWhatsapp = document.getElementById('contactWhatsapp');
+const contactTelegram = document.getElementById('contactTelegram');
 
 // Default contact info
 const defaultContact = {
     email: 'your@email.com',
     github: 'https://github.com/yourusername',
     linkedin: 'https://linkedin.com/in/yourusername',
-    twitter: 'https://twitter.com/yourusername'
+    twitter: 'https://twitter.com/yourusername',
+    whatsapp: '',
+    telegram: ''
 };
 
 // Load contact section
@@ -942,6 +946,18 @@ function loadContact() {
                 <div class="contact-info-item">
                     <i class="fab fa-twitter"></i>
                     <span><a href="${contact.twitter}" target="_blank">${contact.twitter}</a></span>
+                </div>
+            ` : ''}
+            ${contact.whatsapp ? `
+                <div class="contact-info-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <span><a href="${contact.whatsapp}" target="_blank">${contact.whatsapp}</a></span>
+                </div>
+            ` : ''}
+            ${contact.telegram ? `
+                <div class="contact-info-item">
+                    <i class="fab fa-telegram"></i>
+                    <span><a href="${contact.telegram}" target="_blank">${contact.telegram}</a></span>
                 </div>
             ` : ''}
         `;
@@ -987,6 +1003,8 @@ function openContactModal() {
     contactGithub.value = contact.github || '';
     contactLinkedin.value = contact.linkedin || '';
     contactTwitter.value = contact.twitter || '';
+    contactWhatsapp.value = contact.whatsapp || '';
+    contactTelegram.value = contact.telegram || '';
     
     contactModal.classList.add('show');
 }
@@ -1033,7 +1051,7 @@ if (contactCancelBtn) {
     contactCancelBtn.addEventListener('click', closeContactModal);
 }
 
-if (contactFormAdmin) {
+    if (contactFormAdmin) {
     contactFormAdmin.addEventListener('submit', function(e) {
         e.preventDefault();
         
@@ -1041,7 +1059,9 @@ if (contactFormAdmin) {
             email: contactEmail.value,
             github: contactGithub.value,
             linkedin: contactLinkedin.value,
-            twitter: contactTwitter.value
+            twitter: contactTwitter.value,
+            whatsapp: contactWhatsapp.value,
+            telegram: contactTelegram.value
         };
         
         saveContact(contact);
