@@ -1,0 +1,35 @@
+<!-- Contact Form - add to your index.html -->
+<form id="contact-form" class="contact-form">
+  <input type="text" name="name" placeholder="Name" required>
+  <input type="email" name="email" placeholder="Email" required>
+  <textarea name="message" placeholder="Message" required></textarea>
+  <button type="submit">Send</button>
+  <p id="form-status"></p>
+</form>
+
+<script>
+document.getElementById('contact-form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const form = e.target;
+  const status = document.getElementById('form-status');
+  const data = Object.fromEntries(new FormData(form));
+  
+  status.textContent = 'Sending...';
+  try {
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    const json = await res.json();
+    if (json.success) {
+      status.textContent = 'Sent!';
+      form.reset();
+    } else {
+      status.textContent = 'Error: ' + (json.error || 'Failed');
+    }
+  } catch {
+    status.textContent = 'Network error';
+  }
+});
+</script>
